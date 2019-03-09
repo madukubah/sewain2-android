@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragment.profile.ProfileFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_gravity="center"
+            android:src="@drawable/photo_2"
+            />
+        <TextView
+            android:id="@+id/user_profile_fullname"
+            style="@style/TextContent.Black"
+            android:textSize="28sp"
+            android:text="muh alfalah"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="8dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_username"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:text="user name : alan1234"
+            android:layout_marginBottom="8dp"/>
+
+
+        <TextView
+            android:id="@+id/user_profile_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="Alamat : jln mutiara"
+            android:textSize="22sp" />
+        <TextView
+            android:id="@+id/user_profile_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:text="No Hp : 081342989185"
+            android:layout_marginBottom="8dp"/>
+        <TextView
+            android:id="@+id/user_profile_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:text="Email : Alan@gmail.com"
+            android:layout_marginBottom="8dp"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="8dp">
+                <Button
+                    android:id="@+id/button_edit_profile"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity = "bottom"
+                    android:text="edit Profil"
+                    android:textSize="12sp" />
+                <Button
+                    android:id="@+id/log_out"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Log out"
+                    android:textSize="12sp" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
