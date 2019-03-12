@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.madukubah.coternak2">
+    package="com.madukubah.rumahaku">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
