@@ -6,10 +6,12 @@
     tools:context=".view.fragment.profile.ProfileFragment">
 
     <LinearLayout
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/activity_horizontal_margin"
         android:orientation="vertical"
+        android:visibility="gone"
         >
         <ImageView
             android:layout_width="100dp"
@@ -88,6 +90,38 @@
             </TableRow>
         </TableLayout>
 
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/not_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login terlebih dahulu"
+            android:textAlignment="center"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Login"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="belum punya akun?"
+            android:textAlignment="center"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Register"
+            />
     </LinearLayout>
 
 </RelativeLayout>

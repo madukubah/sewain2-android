@@ -8,6 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.madukubah.coternak2.R
+import com.madukubah.coternak2.config.invisible
+import com.madukubah.coternak2.config.visible
+import com.madukubah.coternak2.preferences.MySharedPreferences
+import kotlinx.android.synthetic.main.fragment_profile.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,6 +28,21 @@ class ProfileFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        val ctx = checkNotNull(  context )
+        ctx.let {
+            val mySharedPreferences = MySharedPreferences(it )
+
+            if( mySharedPreferences.isLogin() ){
+                login.visible()
+                not_login.invisible()
+            }
+        }
+
+
     }
     companion object {
         fun newInstance() : ProfileFragment

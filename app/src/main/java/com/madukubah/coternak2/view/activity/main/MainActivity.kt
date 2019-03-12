@@ -6,6 +6,7 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.view.MenuItem
 import com.madukubah.coternak2.R
+import com.madukubah.coternak2.preferences.MySharedPreferences
 import com.madukubah.coternak2.view.fragment.search.SearchFragment
 import com.madukubah.coternak2.view.fragment.menu.MenuFragment
 import com.madukubah.coternak2.view.fragment.profile.ProfileFragment
@@ -44,6 +45,9 @@ class MainActivity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val mySharedPreferences = MySharedPreferences(this)
+        mySharedPreferences.setIsLogin(true)
 
         navigation.setOnNavigationItemSelectedListener(this)
 
