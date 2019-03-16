@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import com.madukubah.rumahaku.R
 import com.madukubah.rumahaku.config.invisible
 import com.madukubah.rumahaku.config.visible
+import com.madukubah.rumahaku.model.Ad
 import com.madukubah.rumahaku.model.BannerPromo
 import com.madukubah.rumahaku.model.Category
 import com.madukubah.rumahaku.view.activity.item.ItemActivity
@@ -44,11 +45,19 @@ class MenuFragment
         AnkoLogger,
         MenuView.MView
 {
+    override fun onLoadAds(banners: List<Ad>) {
+        info{"banners = "+ banners }
+        bannerCarouselItem.updatePromos( banners )
+    }
+
     override fun onLoadCategory(response: List<Category>) {
         if( response.size >0  ){
             Section().apply {
                 add( makeCategories( response ) )
                 groupAdapter.add(this)
+                val a = groupAdapter.getItem(0)
+
+                info{"aa = "+ a }
             }
         }
     }
@@ -76,7 +85,7 @@ class MenuFragment
 
     }
 
-    override fun onBannerClick(promo: BannerPromo) {
+    override fun onBannerClick(promo: Ad) {
 
     }
 
@@ -95,32 +104,26 @@ class MenuFragment
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         info { "CREATE" }
-        val promos = listOf(
-                BannerPromo(name = "Puncak badai uang",
-                        image = "https://s2.bukalapak.com/uploads/promo_partnerinfo_bloggy/2842/Bloggy_1_puncak.jpg"),
-                BannerPromo(
-                        name = "hati hati ada guncangan badai uang",
-                        image = "https://s4.bukalapak.com/uploads/promo_partnerinfo_bloggy/5042/Bloggy_1.jpg"
-                )
-        )
-
-
         rvMain.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = groupAdapter
         }
 
+        groupAdapter.clear()
+        val promos :MutableList<Ad> = mutableListOf()
+
         val fm = getFragmentManager()
-        val bannerCarouselItem = BannerCarouselItem(promos, fm, this)
+        bannerCarouselItem = BannerCarouselItem(promos, fm, this)
         groupAdapter.add(bannerCarouselItem)
 
         presenter = MenuPresenterAnko(this)
-
         ( presenter as MenuPresenterAnko ).loadData()
+        ( presenter as MenuPresenterAnko ).getAds()
     }
 
     private fun makeCategories( categories : List<Category> ) : ItemCategories
     {
+
         val categoryAdapter = GroupAdapter<ViewHolder>()
         val ctx = context
         categories.map {
@@ -139,4 +142,5 @@ class MenuFragment
 
     private var groupAdapter = GroupAdapter<ViewHolder>()
     lateinit var presenter: MenuPresenter
+    lateinit var bannerCarouselItem : BannerCarouselItem
 }

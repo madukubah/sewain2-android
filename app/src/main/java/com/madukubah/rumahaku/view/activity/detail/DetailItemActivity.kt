@@ -35,12 +35,10 @@ class DetailItemActivity
             val contactFragment : ContactFragment = ContactFragment(){
                 when( it ){
                     0->{
-//                        toast("telepon")
                         val dialPhoneIntent = Intent( Intent.ACTION_DIAL, Uri.parse("tel:" + item.user_profile_phone ))
                         startActivity(dialPhoneIntent)
                     }
                     1->{
-//                        toast("SMS")
                         sendSMS()
                     }
                 }
@@ -51,7 +49,7 @@ class DetailItemActivity
     }
 
     private fun sendSMS()
-    {   val tx = "betul ini dgn pemilik " + item.store_name + " ? saya tertarik dengan  ' " + item.item_name + " ' \n\n Sms Via Co-Ternak App"
+    {   val tx = " saya tertarik dengan untuk memesan ' " + item.item_name + " ' \n\n Sms Via Rumah Aku App"
         val i = Intent( Intent.ACTION_VIEW, Uri.fromParts("sms", "" + item.user_profile_phone  , this.toString()) )
         i.putExtra("sms_body", tx );
 
@@ -78,11 +76,9 @@ class DetailItemActivity
     private fun setupUI()
     {
         tv_harga.text ="Rp. "+ Config.priceFormat( ""+item.item_price )
-        tv_dilihat.text = ""
-        tv_weight.text = item.item_weight + " Kg"
-        tv_age.text = item.item_ages + " Tahun"
+        tv_dilihat.text = " 100 kali dilihat"
         tv_owner.text = """${item.user_profile_fullname} ( ${item.store_name} ) """
-        tv_peternakan_address.text = item.store_address
+        tv_store_address.text = item.store_address
 
         val images = item.item_images.split(";")
 

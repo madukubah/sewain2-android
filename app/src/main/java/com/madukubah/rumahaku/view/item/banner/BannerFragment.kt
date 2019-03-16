@@ -7,9 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
+import com.madukubah.rumahaku.BuildConfig
 import com.madukubah.rumahaku.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_banner.*
+import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.info
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,7 +23,11 @@ private const val ARG_PARAM2 = "param2"
  * A simple [Fragment] subclass.
  *
  */
-class BannerFragment : Fragment() {
+class BannerFragment
+    :
+        Fragment(),
+        AnkoLogger
+{
 
     companion object {
         /**
@@ -42,15 +49,19 @@ class BannerFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_banner, container, false)
     }
 
+    override fun onResume() {
+        super.onResume()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        val url = arguments?.getString("img")
-//
-//        url.let {
-//            Glide.with(this)
-//                    .load(url)
-//                    .into( imgBanner )
-//        }
+        val url = arguments?.getString("img")
+        info{"banners image = "+ BuildConfig.ADS_IMAGE + url }
+        url.let {
+            Glide.with(this)
+                    .load( BuildConfig.ADS_IMAGE + url)
+                    .into( imgBanner )
+        }
     }
 }

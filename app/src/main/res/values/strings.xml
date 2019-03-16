@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Co-Ternak</string>
+    <string name="app_name">Rumah Aku</string>
 
     <string name="hello_blank_fragment">Hello Kost fragment</string>
     <string name="nama_kost">nama kost</string>
@@ -17,13 +17,17 @@
     <string name="spesifikasi">Keterangan</string>
     <string name="f_umum">Fasilitas</string>
     <string name="f_umum_desc">
-        500 kg
+        2 tempat tidur lengkap dgn bantal\n
+        1 kamar mansi dalam\n
+        1 lemari\n
+        Termasuk Listrik\n
+        Termasuk Air\n
     </string>
     <string name="size">Ukuran</string>
     <string name="content_specs_size">4 X 4 m</string>
     <string name="lama_tinggal">Lama Tinggal</string>
     <string name="lama_tinggal_desc">1 Tahun</string>
-    <string name="di_jual_oleh">Di jual oleh</string>
+    <string name="di_jual_oleh">Pemilik</string>
     <string name="hubungi">Hubungi</string>
     <string name="lihat_kost">Lihat Kost</string>
     <string name="favorites">Favorites</string>
