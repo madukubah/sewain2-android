@@ -20,6 +20,7 @@ data class Item (
         @SerializedName("user_profile_fullname") val user_profile_fullname : String,
         @SerializedName("user_profile_image_path") val user_profile_image_path : String,
         @SerializedName("user_profile_phone") val user_profile_phone : String,
+        @SerializedName("user_profile_address") val user_profile_address : String,
 
         @SerializedName("category_id") val category_id : Long,
         @SerializedName("category_name") val category_name : String,
@@ -29,6 +30,7 @@ data class Item (
             parcel.readLong(),
             parcel.readString(),
             parcel.readLong(),
+            parcel.readString(),
             parcel.readString(),
             parcel.readString(),
             parcel.readString(),
@@ -60,6 +62,7 @@ data class Item (
         parcel.writeString(user_profile_fullname)
         parcel.writeString(user_profile_image_path)
         parcel.writeString(user_profile_phone)
+        parcel.writeString(user_profile_address)
         parcel.writeLong(category_id)
         parcel.writeString(category_name)
         parcel.writeString(create_date)

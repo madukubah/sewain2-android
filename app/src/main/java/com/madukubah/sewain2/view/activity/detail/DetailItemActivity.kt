@@ -6,9 +6,9 @@ import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.view.ViewPager
+import com.bumptech.glide.Glide
 import com.madukubah.sewain2.BuildConfig
 import com.madukubah.sewain2.R
-import com.madukubah.sewain2.config.Config
 import com.madukubah.sewain2.model.Item
 import com.madukubah.sewain2.view.activity.detail.slider.SliderAdapter
 import com.madukubah.sewain2.view.activity.detail.slider.SliderFragment
@@ -75,10 +75,20 @@ class DetailItemActivity
     @SuppressLint("SetTextI18n")
     private fun setupUI()
     {
-        tv_harga.text ="Rp. "+ Config.priceFormat( ""+item.item_price )
-        tv_dilihat.text = " 100 kali dilihat"
+        tv_book_title.text = """${item.item_name} """
+        tv_book_author.text = """${item.item_author} """
+        tv_book_page_count.text = """${item.item_page_count} """
+        tv_book_desc.text = """${item.item_description} """
+
         tv_owner.text = """${item.user_profile_fullname} """
-        tv_store_address.text = ""
+        tv_store_address.text = """${item.user_profile_address} """
+
+        val url = item.user_profile_image_path
+        url.let {
+            Glide.with(this)
+                    .load( BuildConfig.USER_IMAGE + url)
+                    .into( profile_image )
+        }
 
         val images = item.item_images.split(";")
 
