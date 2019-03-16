@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.madukubah.rumahaku">
+    package="com.madukubah.sewain2">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.activity.item.ItemActivity" />
-        <activity android:name=".view.activity.detail.DetailItemActivity"></activity>
+        <activity android:name=".view.activity.detail.DetailItemActivity" />
+        <activity android:name=".view.activity.splashscreen.SplashScreenActivity"></activity>
     </application>
 
 </manifest>

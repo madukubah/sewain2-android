@@ -7,17 +7,18 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.madukubah.rumahaku"
+        applicationId "com.madukubah.sewain2"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "END_POINT", "\"http://rumahaku.madukubah.com/api/\""
-        buildConfigField "String", "STORE_IMAGE", "\"http://rumahaku.madukubah.com/upload/store/\""
-        buildConfigField "String", "ITEM_IMAGE", "\"http://rumahaku.madukubah.com/upload/item/\""
-        buildConfigField "String", "ADS_IMAGE", "\"http://rumahaku.madukubah.com/upload/iklan/\""
+        buildConfigField "String", "END_POINT", "\"http://sewain.madukubah.com/api/\""
+        buildConfigField "String", "STORE_IMAGE", "\"http://sewain.madukubah.com/upload/store/\""
+        buildConfigField "String", "ITEM_IMAGE", "\"http://sewain.madukubah.com/upload/item/\""
+        buildConfigField "String", "ADS_IMAGE", "\"http://sewain.madukubah.com/upload/iklan/\""
+        buildConfigField "String", "USER_IMAGE", "\"http://sewain.madukubah.com/upload/user/\""
     }
     buildTypes {
         release {
